@@ -370,9 +370,12 @@ Console.WriteLine("______________");
 
 factory1.PrintEmployeesInfo();
 class Factory
-{
-    public string name;
-    public Employee[] employees;
+    {
+    private string name;
+    public string Name { get; set; }
+
+    private Employee[] employees;
+    public Employee[] Employees { get; set; }
 
     public Factory()
     {
@@ -407,7 +410,7 @@ class Factory
 
         foreach (Employee employee in employeesNew)
         {
-            employee.EmployeeInfoPrint();
+            employee.PrintInfo();
         }
     }
 
@@ -415,7 +418,7 @@ class Factory
     {
         foreach (Employee employee in employees)
         {
-            employee.EmployeeInfoPrint();
+            employee.PrintInfo();
         }
     }
 
@@ -426,7 +429,7 @@ class Factory
         {
             if (position.Equals(employee.Position))
             {
-                employee.EmployeeInfoPrint();
+                employee.PrintInfo();
             }
         }
     }
