@@ -6,6 +6,10 @@
     <RootNamespace>core_learning</RootNamespace>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+	<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="Library\Library.csproj" />
+  </ItemGroup>
 </Project>
