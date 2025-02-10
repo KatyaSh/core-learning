@@ -2,19 +2,19 @@
 {
     public class Employee
     {
-        public string firstName;
-        public string lastName;
-        public int age;
-        public string position;
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public int Age { get; set; }
+        public string Position { get; set; }
 
         public Employee(string name, string lastName, int age, string position)
         {
-            this.firstName = name;
-            this.lastName = lastName;
-            this.age = age;
-            this.position = position;
+            FirstName = name;
+            LastName = lastName;
+            Age = age;
+            Position = position;
         }
 
-        public void EmployeeInfoPrint() => Console.WriteLine($"Name: {firstName}, LastName: {lastName}, age: {age}, Position: {position}");
+        public void EmployeeInfoPrint() => Console.WriteLine($"Name: {FirstName}, LastName: {LastName}, age: {Age}, Position: {Position}");
     }
 }

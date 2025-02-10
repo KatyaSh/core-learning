@@ -1,20 +1,20 @@
 ﻿using Library;
 
-//Task1-1 
+// Task 1-1 
 {
     Console.WriteLine("Hi! What’s your name ?");
     var name = Console.ReadLine();
     Console.WriteLine($"Nice to meet you {name}");
 }
 
-//Task3-1
+// Task 3-1
 {
     int num = 20;
     num += 5;
     Console.WriteLine(num);
 }
 
-//Task 3-2
+// Task 3-2
 {
     int numberOfYears;
     int numberOfMonths;
@@ -22,9 +22,9 @@
 
     Console.Write("Enter a four-digit number that represents n days:");
     var input = Console.ReadLine();
-    bool parsResult = int.TryParse(input, out int days);
+    bool isParsed = int.TryParse(input, out int days);
 
-    if (parsResult == true & days >= 0)
+    if (isParsed && days >= 0)
     {
         numberOfYears = days / 365;
         numberOfMonths = (days - (numberOfYears * 365)) / 30;
@@ -37,13 +37,13 @@
     }
 }
 
-//Task 3-3
+// Task 3-3
 {
     Console.Write("Enter your number:");
     var userNumber = Console.ReadLine();
-    bool parsResult = int.TryParse(userNumber, out int parsedNumber);
+    bool isParsedResult = int.TryParse(userNumber, out int parsedNumber);
 
-    if (parsResult == true)
+    if (isParsedResult)
     {
         int result = parsedNumber + parsedNumber * 2;
         Console.WriteLine("Your result is: " + result);
@@ -54,7 +54,7 @@
     }
 }
 
-//Task 3-4
+// Task 3-4
 {
     int a = -34; // отрицательное целое число < 0
     uint b = 4; //положительное целое число > 0
@@ -66,17 +66,17 @@
     int h = 0; //Просто целое число
 }
 
-//Task 3-5
+// Task 3-5
 {
     Console.Write("Enter your number:");
     var userNumber = Console.ReadLine();
-    bool result = int.TryParse(userNumber, out int parsedNumber);
+    bool isParsedNumber = int.TryParse(userNumber, out int parsedNumber);
 
-    if (result == true & Math.Abs(parsedNumber) % 2 == 0)
+    if (isParsedNumber && Math.Abs(parsedNumber) % 2 == 0)
     {
         Console.WriteLine("Your number is: Even");
     }
-    else if (result == true & Math.Abs(parsedNumber) % 2 == 1)
+    else if (isParsedNumber && Math.Abs(parsedNumber) % 2 == 1)
     {
         Console.WriteLine("Your number is: Odd");
     }
@@ -86,15 +86,15 @@
     }
 }
 
-//Task 4-1
+// Task 4-1
 {
     int sum = 0;
 
     Console.Write("Enter any positive number: ");
     var input = Console.ReadLine();
-    bool parsResult = int.TryParse(input, out int number);
+    bool isParsedPositive = int.TryParse(input, out int number);
 
-    if (parsResult == true & number >= 0)
+    if (isParsedPositive && number >= 0)
     {
         for (int i = 0; i <= number; i++)
         {
@@ -108,7 +108,7 @@
     }
 }
 
-//Task 4-2
+// Task 4-2
 {
     int j = 0;
     int number3 = 3;
@@ -122,7 +122,7 @@
     }
 }
 
-//Task 4-3
+// Task 4-3
 {
     int[] numbers = new int[] { 3, 5, 9, 8, 15 };
     int product = 1;
@@ -134,7 +134,7 @@
     Console.WriteLine("the product of these numbers:" + product);
 }
 
-//Task 4-4
+// Task 4-4
 {
     int count = 0;
     int dividedNumber = 2048;
@@ -147,7 +147,7 @@
     Console.WriteLine($"2048 can be divided by 2: {count} times");
 }
 
-//Task 4-5
+// Task 4-5
 {
     string[] words = new string[] { "Pts", "Hello", "Kus", "string", "Hello" };
     string helloWord = "Hello";
@@ -162,7 +162,7 @@
     }
 }
 
-//Task 4-6
+// Task 4-6
 {
     int[] numbersArr = new int[] { 1, 5, 2, 3, 5, 4, 6 };
 
@@ -170,7 +170,7 @@
     Console.WriteLine(sumOfNumbers);
 }
 
-//Task 4-7
+// Task 4-7
 {
     int[] numbersArr = new int[] { 9, 5, 2, 3, 5, 4, 6 };
     int sumOfIndexes;
@@ -197,7 +197,7 @@
     Console.WriteLine(sumOfIndexes);
 }
 
-//Task 4-8
+// Task 4-8
 {
     int[] numbersArr = new int[] { 5, 1, 2, 3, 5, 4, 6 };
     int temp;
@@ -226,7 +226,7 @@
     }
 }
 
-//Task 4-9
+// Task 4-9
 {
     for (int a = 1; a < 11; a++)
     {
@@ -243,7 +243,7 @@
     }
 }
 
-//Task 4-10
+// Task 4-10
 {
     int[][] nums = new int[2][];
     nums[0] = new int[6] { 1, 2, 3, 4, 5, 6 };
@@ -265,7 +265,7 @@
     }
 }
 
-//Task 4-11
+// Task 4-11
 {
     int[] oldArray = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
 
@@ -353,8 +353,8 @@
     }
 }
 
-var rabotnik = new Employee ("Pasha", "Bubkin", 23, "gruzchik");
-var pracauniki = new Employee[] { rabotnik, new Employee("Venus", "Papus", 45, "director"), new Employee("Mada", "Petrovna", 56, "buhgalter")};
+var rabotnik = new Employee("Pasha", "Bubkin", 23, "gruzchik");
+var pracauniki = new Employee[] { rabotnik, new Employee("Venus", "Papus", 45, "director"), new Employee("Mada", "Petrovna", 56, "buhgalter") };
 var factory = new Factory("Rassvet");
 var factory1 = new Factory();
 var factory2 = new Factory("Mechta", pracauniki);
@@ -370,7 +370,7 @@ Console.WriteLine("______________");
 
 factory1.PrintEmployeesInfo();
 class Factory
-    {
+{
     public string name;
     public Employee[] employees;
 
@@ -419,11 +419,12 @@ class Factory
         }
     }
 
+
     public void PrintEmployeesInfoCertainPositin(string position)
     {
         foreach (Employee employee in employees)
         {
-            if (position.Equals(employee.position))
+            if (position.Equals(employee.Position))
             {
                 employee.EmployeeInfoPrint();
             }
