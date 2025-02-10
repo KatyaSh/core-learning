@@ -370,7 +370,7 @@ Console.WriteLine("______________");
 
 factory1.PrintEmployeesInfo();
 class Factory
-    {
+{
     private string name;
     public string Name { get; set; }
 

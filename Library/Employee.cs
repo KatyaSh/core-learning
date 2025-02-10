@@ -2,21 +2,8 @@
 {
     public class Person
     {
-        private string firstName;
-        public string FirstName
-        {
-            get { return firstName; }
-            set { firstName = value; }
-        }
-
-        private string lastName;
-        public string LastName
-        {
-            get { return lastName; }
-            set { lastName = value; }
-        }
-
-        private string age;
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
         public int Age { get; set; }
 
         public virtual void PrintInfo() => Console.WriteLine($"Name: {FirstName}, LastName: {LastName}, Age: {Age}");
@@ -24,8 +11,6 @@
 
     public class Employee : Person
     {
-
-        private string position;
         public string Position { get; set; }
 
         public Employee(string firstName, string lastName, int age, string position)
