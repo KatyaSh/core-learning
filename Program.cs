@@ -384,7 +384,7 @@ switch (parts[1])
         break;
 }
 
-//Task3-2-2
+// Task3-2-2
 Console.WriteLine("enter a number: ");
 var userNumber = Console.ReadLine();
 bool specifiedNumber = int.TryParse((userNumber), out int a1);
@@ -400,7 +400,7 @@ if (specifiedNumber)
     }
     else
     {
-        Console.WriteLine("Does’t work");
+        Console.WriteLine("Doesn’t work");
     }
 }
 else
@@ -408,7 +408,7 @@ else
     Console.WriteLine("You specified not a number");
 }
 
-//Task3-2-3
+// Task3-2-3
 Console.WriteLine("enter a number: ");
 var enteredNumber = Console.ReadLine();
 bool parsedNumber = int.TryParse((enteredNumber), out int parsNum);
