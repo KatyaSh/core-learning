@@ -415,6 +415,46 @@ bool parsedNumber = int.TryParse((enteredNumber), out int parsNum);
 
 Console.WriteLine((parsedNumber && parsNum % 2 == 0) ? $"{parsNum} is Even" : $"{parsNum} is Odd");
 
+BankAccount bankAccount = new BankAccount();
+bankAccount.DisplayAccountInfo();
+bankAccount.AddDeposite(20);
+
+Console.Write("enter operation which you want : 'add deposite' or 'withdrow money'");
+var operationChosen = Console.ReadLine();
+
+if (operationChosen == "add deposite")
+{
+    Console.Write("enter deposite amount: ");
+    var input = Console.ReadLine();
+    bool isParsed = int.TryParse(input, out int deposite);
+
+    if (isParsed)
+    {
+        bankAccount.AddDeposite(deposite);
+        bankAccount.DisplayAccountMoneyInfo();
+    }
+    else
+    {
+        Console.Write("you entered not a number");
+    }
+}
+else if (operationChosen == "withdrow money")
+{
+    Console.Write("enter summ you want to withdrow: ");
+    var input = Console.ReadLine();
+    bool isParsed = int.TryParse(input, out int withdrow);
+
+    if (isParsed)
+    {
+        bankAccount.WithdrowMoney(withdrow);
+        bankAccount.DisplayAccountMoneyInfo();
+    }
+    else
+    {
+        Console.Write("you entered not a number");
+    }
+}
+
 var rabotnik = new Employee("Pasha", "Bubkin", 23, "gruzchik");
 var pracauniki = new Employee[] { rabotnik, new Employee("Venus", "Papus", 45, "director"), new Employee("Mada", "Petrovna", 56, "buhgalter") };
 var factory = new Factory("Rassvet");
