@@ -455,6 +455,23 @@ else if (operationChosen == "withdrow money")
     }
 }
 
+Client client1 = new Client("Alice", "Johnson", 30, true);
+Client client2 = new Client("Bob", "Smith", 45, false);
+
+OfficeWorker analyst = new OfficeWorker("John", "Doe", 28, true, "Financial Analyst");
+OfficeWorker loanSpecialist = new OfficeWorker("Emma", "Brown", 35, false, "Loan Specialist");
+Manager manager = new Manager("David", "Wilson", 40, true);
+manager.FirePerson(loanSpecialist);
+client1.TakeLoan(true);
+client2.TakeLoan(false);
+analyst.QuitFromBank(manager.isFired);
+manager.QuitFromBank(loanSpecialist.isFired);
+Console.WriteLine(client1);
+Console.WriteLine(client2);
+Console.WriteLine(analyst);
+Console.WriteLine(loanSpecialist);
+Console.WriteLine(manager);
+
 var rabotnik = new Employee("Pasha", "Bubkin", 23, "gruzchik");
 var pracauniki = new Employee[] { rabotnik, new Employee("Venus", "Papus", 45, "director"), new Employee("Mada", "Petrovna", 56, "buhgalter") };
 var factory = new Factory("Rassvet");
@@ -523,6 +540,7 @@ class Factory
             employee.PrintInfo();
         }
     }
+
 
     public void PrintEmployeesInfoCertainPositin(string position)
     {
