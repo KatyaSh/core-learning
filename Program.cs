@@ -472,6 +472,55 @@ Console.WriteLine(analyst);
 Console.WriteLine(loanSpecialist);
 Console.WriteLine(manager);
 
+// Task 1
+Console.WriteLine("___________Task1___Abstract class__________________");
+Crows myCrow = new Crows(5, "Gosha", 5, 20);
+Parrots myParrot = new Parrots("multicolor", "Kesha", 3, 15);
+myCrow.BirdInfo();
+myCrow.MakeSound();
+myCrow.WhatEat();
+Console.WriteLine("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+myParrot.BirdInfo();
+myParrot.MakeSound();
+myParrot.WhereLive();
+
+// Task 2
+Console.WriteLine("___________Task2________Interfaces_____________");
+Penguin myPin = new Penguin("Pin");
+myPin.BirdInfo();
+myPin.MakeNest();
+myPin.Sound();
+Console.WriteLine("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+Sparrow mySparrow = new Sparrow("Chichik");
+mySparrow.BirdInfo();
+mySparrow.MakeNest();
+mySparrow.Sound();
+mySparrow.Fly();
+
+// Task 3
+Console.WriteLine("___________Task3______Electronics store_______________");
+Polaroid polaroid = new Polaroid("Now Generation 2 i-Type Instant Camera", 129.99, "Polaroid");
+MobilePhone iphone = new MobilePhone("15 pro", 1689.01, "Apple Inc");
+Printer hp = new Printer("LaserJet Pro MFP 4101fdn Printer with Fax", 379, "HP");
+polaroid.DeviceInfo();
+polaroid.Charge();
+polaroid.TurnOn();
+polaroid.TurnOff();
+polaroid.TakePhoto();
+polaroid.Print();
+Console.WriteLine("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+iphone.DeviceInfo();
+iphone.Charge();
+iphone.TurnOn();
+iphone.TurnOff();
+iphone.TakePhoto();
+Console.WriteLine("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+hp.DeviceInfo();
+hp.Charge();
+hp.TurnOn();
+hp.TurnOff();
+hp.Print();
+
 var rabotnik = new Employee("Pasha", "Bubkin", 23, "gruzchik");
 var pracauniki = new Employee[] { rabotnik, new Employee("Venus", "Papus", 45, "director"), new Employee("Mada", "Petrovna", 56, "buhgalter") };
 var factory = new Factory("Rassvet");
