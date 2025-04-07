@@ -521,8 +521,37 @@ hp.TurnOn();
 hp.TurnOff();
 hp.Print();
 
-var rabotnik = new Employee("Pasha", "Bubkin", 23, "gruzchik");
-var pracauniki = new Employee[] { rabotnik, new Employee("Venus", "Papus", 45, "director"), new Employee("Mada", "Petrovna", 56, "buhgalter") };
+// Task 1
+int[] massive = { 8, 7, 1, 4, 2 };
+Massive.ShowMassiveElements(massive);
+Console.WriteLine("----------------------------");
+
+// Task 2
+Candidate[] registeredCandidates = new Candidate[100];
+CandidateValidation validation = new CandidateValidation(registeredCandidates);
+Candidate candidate1 = new Candidate("Vasia", "Technik", 45);
+Candidate candidate2 = null;
+
+try
+{
+    validation.ValidateCandidate(candidate1);
+}
+catch (CandidateException ex)
+{
+    Console.WriteLine($"Error: {ex.Message}");
+}
+
+try
+{
+    validation.ValidateCandidate(candidate2);
+}
+catch (CandidateException ex)
+{
+    Console.WriteLine($"Error: {ex.Message}");
+}
+
+var rabotnik = new Library.Employee("Pasha", "Bubkin", 23, "gruzchik");
+var pracauniki = new Library.Employee[] { rabotnik, new Library.Employee("Venus", "Papus", 45, "director"), new Library.Employee("Mada", "Petrovna", 56, "buhgalter") };
 var factory = new Factory("Rassvet");
 var factory1 = new Factory();
 var factory2 = new Factory("Mechta", pracauniki);
@@ -542,22 +571,22 @@ class Factory
     private string name;
     public string Name { get; set; }
 
-    private Employee[] employees;
-    public Employee[] Employees { get; set; }
+    private Library.Employee[] employees;
+    public Library.Employee[] Employees { get; set; }
 
     public Factory()
     {
         this.name = "fabrika Norblina";
-        this.employees = new Employee[] { (new Employee("Jula", "Smith", 35, "Accountant")), (new Employee("Tom", "Peter", 30, "Stolyar")) };
+        this.employees = new Library.Employee[] { (new Library.Employee("Jula", "Smith", 35, "Accountant")), (new Library.Employee("Tom", "Peter", 30, "Stolyar")) };
     }
 
     public Factory(string name)
     {
         this.name = name;
-        this.employees = new Employee[] { (new Employee("Samanta", "Torr", 35, "Cleaner")), (new Employee("Vanessa", "Paradi", 23, "Director")) };
+        this.employees = new Library.Employee[] { (new Library.Employee("Samanta", "Torr", 35, "Cleaner")), (new Library.Employee("Vanessa", "Paradi", 23, "Director")) };
     }
 
-    public Factory(string name, Employee[] employees)
+    public Factory(string name, Library.Employee[] employees)
     {
         this.name = name;
         this.employees = employees;
@@ -565,9 +594,9 @@ class Factory
 
     public void NumberOfEmployees() => Console.WriteLine(employees.Length);
 
-    public void AddNewEmployee(Employee personNew)
+    public void AddNewEmployee(Library.Employee personNew)
     {
-        var employeesNew = new Employee[employees.Length + 1];
+        var employeesNew = new Library.Employee[employees.Length + 1];
 
         for (int i = 0; i < employees.Length; i++)
         {
@@ -576,7 +605,7 @@ class Factory
 
         employeesNew[employees.Length] = personNew;
 
-        foreach (Employee employee in employeesNew)
+        foreach (Library.Employee employee in employeesNew)
         {
             employee.PrintInfo();
         }
@@ -584,16 +613,15 @@ class Factory
 
     public void PrintEmployeesInfo()
     {
-        foreach (Employee employee in employees)
+        foreach (Library.Employee employee in employees)
         {
             employee.PrintInfo();
         }
     }
 
-
     public void PrintEmployeesInfoCertainPositin(string position)
     {
-        foreach (Employee employee in employees)
+        foreach (Library.Employee employee in employees)
         {
             if (position.Equals(employee.Position))
             {
