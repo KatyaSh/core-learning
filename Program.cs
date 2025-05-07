@@ -124,10 +124,10 @@
 
 // Task 4-3
 {
-    int[] numbers = new int[] { 3, 5, 9, 8, 15 };
+    int[] numbers1 = new int[] { 3, 5, 9, 8, 15 };
     int product = 1;
 
-    foreach (int i in numbers)
+    foreach (int i in numbers1)
     {
         product *= i;
     }
@@ -549,6 +549,126 @@ catch (CandidateException ex)
 {
     Console.WriteLine($"Error: {ex.Message}");
 }
+
+// Task 11.1
+int [] numbers = { 0, 1, 2, 5, 6, 7, 8, 9, 100, 515 };
+
+var evenNumbers = from num in numbers
+                  where num % 2 == 0
+                  select num;
+
+Console.WriteLine("Even numbers in massive are:");
+foreach (int num in evenNumbers)
+{
+    Console.Write(num + " ");
+}
+
+Console.WriteLine("----------------------------------");
+
+// Task 11.2
+List<int> ints = new List<int> { 1, 3, -2, -4, -7, -3, -8, 12, 19, 6, 9, 10, 14 };
+
+var positiveNumber = from num in ints
+                     where num > 0
+                     where num >= 1 && num < 11
+                     select num;
+
+Console.WriteLine("the positive numbers within the range of 1 to 11 from a list");
+foreach (int num in positiveNumber)
+{
+    Console.Write(num + " ");
+}
+
+Console.WriteLine("----------------------------------");
+
+// Task 11.3
+int[] numbersSqr = { 11, 2, 5, 6, 7, 8, 9, 100, 515 };
+
+var output = from num in numbersSqr
+             select new Square(num);
+
+foreach (var item in output)
+{
+    Console.WriteLine($" Number = {item.Number}, Sqr = {item.Sqr}");
+}
+
+Console.WriteLine("----------------------------------");
+
+// Task 11.4
+int[] numbersFr = { 11, 2, 5, 3, 6, 11, 5, 7, 8, 9, 100, 515, 3 };
+
+var frequency = from num in numbersFr
+                group num by num into g
+                select new
+                {
+                    Number = g.Key,
+                    Frequency = g.Count()
+                };
+
+Console.WriteLine("The number and the Frequency are:");
+foreach (var num in frequency)
+{
+    Console.WriteLine($"Number {num.Number} appears {num.Frequency} times");
+}
+
+Console.WriteLine("----------------------------------");
+
+// Task 11.5
+var startChar = 'A';
+var endChar = 'M';
+string[] cities = { "ROME", "LONDON", "NAIROBI", "CALIFORNIA", "ZURICH", "NEW DELHI", "AMSTERDAM", "ABU DHABI", "PARIS" };
+
+var allStartsWithT = cities.Where(c => c.StartsWith(startChar.ToString()) && c.EndsWith(endChar.ToString()));
+
+Console.WriteLine("Cities that  start and end with a specific character:");
+foreach (var city in allStartsWithT)
+{
+    Console.WriteLine(city);
+}
+
+Console.WriteLine("----------------------------------");
+
+// Task 11.6
+int[] numbersNth = { 5, 7, 13, 24, 6, 9, 8, 7 };
+
+Console.Write("How many records do you want to display ? :");
+
+var records = int.Parse(Console.ReadLine());
+var orderedNumbers = numbersNth.OrderByDescending(n => n).Take(records);
+
+Console.WriteLine($"The top {records}  records from the list are:");
+foreach (var record in orderedNumbers)
+{
+    Console.Write(record + ", ");
+}
+
+Console.WriteLine("----------------------------------");
+
+// Task 11.7
+List<string> places = new List<string> { "ROME", "PARIS", "LONDON", "ZURICH", "NAIROBI", "ABU DHABI", "AMSTERDAM", "NEW DELHI", "CALIFORNIA" };
+
+var sorted = places.OrderBy(n => n.Length).ThenBy(n => n);
+
+Console.WriteLine("Here is the arranged list:");
+foreach (var place in sorted)
+{
+    Console.WriteLine(place);
+}
+
+Console.WriteLine("----------------------------------");
+
+// Task 11.8
+List<string> elements = new List<string> { "Butter", "Brade", "Honey", "Honey", "Biscuit", "Butter", "Brade" };
+
+var distinctItems = elements.Distinct().OrderBy(item => item);
+
+Console.WriteLine("The elements in ascending order are:");
+foreach (var item in distinctItems)
+{
+    Console.WriteLine(item);
+}
+
+Console.WriteLine("----------------------------------");
 
 var rabotnik = new Library.Employee("Pasha", "Bubkin", 23, "gruzchik");
 var pracauniki = new Library.Employee[] { rabotnik, new Library.Employee("Venus", "Papus", 45, "director"), new Library.Employee("Mada", "Petrovna", 56, "buhgalter") };
